@@ -10,7 +10,7 @@ def execute_script():
         french = row.french.replace('__', '')
         english = row.english
         comments = row.comments
-        audio_file = utils.audio.generate_fr_audio(french, file_name_pre='preposition-')
+        audio_file = utils.audio.generate_target_audio(french, file_name_pre='preposition-')
         utils.notion.write_toggle(english, french, audio_file, page, extra_text=comments)
 
 

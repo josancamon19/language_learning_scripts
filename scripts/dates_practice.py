@@ -27,7 +27,7 @@ def parsed_str_date():
 def execute_script(practice_type=0, wait_time=3.0):
     while True:
         date_str = parsed_str_date()
-        file = utils.audio.generate_fr_audio(date_str)
+        file = utils.audio.generate_target_audio(date_str)
         if practice_type == 0:
             playsound(f'../audios/{file}')
             time.sleep(wait_time)

@@ -7,7 +7,7 @@ import time
 
 def build_audio_files():
     for i in range(101):
-        utils.audio.generate_fr_audio(f'{i}', 'number-')
+        utils.audio.generate_target_audio(f'{i}', 'number-')
 
 
 def execute_script(from_number=0, to_number=100, practice_type=0, wait_time=3.0):

@@ -17,7 +17,7 @@ def random_time():
 def execute_script(practice_type=0, wait_time=3.0):
     while True:
         rand_time = random_time()
-        file = utils.audio.generate_fr_audio(rand_time)
+        file = utils.audio.generate_target_audio(rand_time)
         if practice_type == 0:
             playsound(f'../audios/{file}')
             time.sleep(wait_time)
@@ -31,4 +31,4 @@ def execute_script(practice_type=0, wait_time=3.0):
 
 
 if __name__ == '__main__':
-    execute_script(practice_type=1, wait_time=5)
+    execute_script(practice_type=1, wait_time=3)

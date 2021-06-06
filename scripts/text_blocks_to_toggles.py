@@ -4,12 +4,15 @@ import utils
 
 
 def execute_script():
-    page = utils.notion.get_source("https://www.notion.so/josancamon19/Jules-1-review-e0d3beba5a5e41808948126b5a75be6b", )
+    source = 'https://www.notion.so/josancamon19/Jules-4-review-132169422bbb4fbe97599ee191acc1f3'
+    source = 'https://www.notion.so/b5494a47374646f0b9ada8097f370a45'
+    page = utils.notion.get_source(source)
     for text_block in filter(lambda x: isinstance(x, TextBlock) and x.title_plaintext, page.children):
-        french = text_block.title
-        audio_file = utils.audio.generate_fr_audio(french)
-        english = utils.translation.fr_to_en(french)
-        utils.notion.write_toggle(english, french, audio_file, page)
+        text = text_block.title
+        print(text)
+        translation = utils.translation.translate_text(text)
+        audio_file = utils.audio.generate_target_audio(translation)
+        utils.notion.write_toggle(text, translation, audio_file, page)
 
 
 if __name__ == '__main__':
